@@ -8,10 +8,10 @@ ENV PG_CRON_VERSION="1.1.4" \
 
 RUN apk add --no-cache --virtual \
 		.build-deps \
-		build-base \
-		ca-certificates \
-		openssl \
-		tar && \
+		build-base=0.5-r1 \
+		ca-certificates=20190108-r0 \
+		openssl=1.1.1b-r1 \
+		tar=1.32-r0 && \
 	wget -O /pg_cron.tgz https://github.com/citusdata/pg_cron/archive/v${PG_CRON_VERSION}.tar.gz && \
 	tar xvzf /pg_cron.tgz && \
 	cd pg_cron-${PG_CRON_VERSION} && \
