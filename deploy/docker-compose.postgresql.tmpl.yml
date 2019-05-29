@@ -12,9 +12,9 @@ services:
     networks:
       gis-net:
         aliases:
-          - atlas-db
+          - recreation-db
     volumes:
-      - atlas-postgres-vol:/var/lib/postgresql/data
+      - recreation-postgres-vol:/var/lib/postgresql/data
 
 networks:
   gis-net:

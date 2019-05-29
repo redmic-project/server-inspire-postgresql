@@ -17,11 +17,11 @@ services:
           memory: 2G
         reservations:
           cpus: '0.01'
-          memory: 512M
+          memory: 250M
 
 volumes:
-  atlas-postgres-vol:
-    name: ${POSTGRES_DATA_VOLUME_NAME:-atlas-postgres-vol}
+  recreation-postgres-vol:
+    name: ${POSTGRES_DATA_VOLUME_NAME:-recreation-postgres-vol}
     driver: "cloudstor:aws"
     driver_opts:
       backing: relocatable

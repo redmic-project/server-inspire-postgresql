@@ -13,8 +13,8 @@ services:
           cpus: '0.75'
           memory: 1G
         reservations:
-          memory: 820M
+          memory: 250M
 
 volumes:
-  atlas-postgres-vol:
-    name: ${POSTGRES_DATA_VOLUME_NAME:-atlas-postgres-vol}
+  recreation-postgres-vol:
+    name: ${POSTGRES_DATA_VOLUME_NAME:-recreation-postgres-vol}
