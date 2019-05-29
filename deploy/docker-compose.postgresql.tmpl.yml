@@ -13,10 +13,17 @@ services:
       gis-net:
         aliases:
           - recreation-db
+      postgres-net:
+        aliases:
+          - recreation-db
     volumes:
       - recreation-postgres-vol:/var/lib/postgresql/data
 
 networks:
   gis-net:
     name: ${GIS_NET_NAME:-gis-net}
+    external: true
+
+  postgres-net:
+    name: ${POSTGRES_NET_NAME:-postgres-net}
     external: true
