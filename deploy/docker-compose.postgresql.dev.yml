@@ -16,5 +16,5 @@ services:
           memory: 250M
 
 volumes:
-  recreation-postgres-vol:
-    name: ${POSTGRES_DATA_VOLUME_NAME:-recreation-postgres-vol}
+  inspire-postgres-vol:
+    name: ${POSTGRES_DATA_VOLUME_NAME:-inspire-postgres-vol}
