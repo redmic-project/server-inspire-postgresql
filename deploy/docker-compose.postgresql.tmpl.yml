@@ -12,12 +12,12 @@ services:
     networks:
       gis-net:
         aliases:
-          - recreation-db
+          - inspire-db
       postgres-net:
         aliases:
-          - recreation-db
+          - inspire-db
     volumes:
-      - recreation-postgres-vol:/var/lib/postgresql/data
+      - inspire-postgres-vol:/var/lib/postgresql/data
 
 networks:
   gis-net:

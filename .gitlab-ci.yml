@@ -12,7 +12,7 @@ stages:
   - deploy
 
 variables:
-  STACK: recreation
+  STACK: inspire
 
 .deploy-development:
   variables:
