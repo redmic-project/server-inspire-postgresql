@@ -6,6 +6,7 @@ ENV PG_CRON_VERSION="1.1.4" \
 	PG_PARTMAN_VERSION="4.0.0" \
 	POSTGRES_WORK_MEM="1GB"
 
+# hadolint ignore=DL3003
 RUN apk add --no-cache --virtual \
 		.build-deps \
 		build-base=0.5-r1 \
