@@ -14,14 +14,14 @@ ARG PG_CRON_VERSION="1.4.1" \
 
 # hadolint ignore=DL3003
 RUN apk add --no-cache --virtual .build-deps \
-		build-base=${BUILD_BASE_VERSION} \
-		clang=${CLANG_VERSION} \
-		llvm=${LLVM_VERSION} \
-		ca-certificates=${CA_CERTIFICATES_VERSION} \
-		openssl=${OPENSSL_VERSION} \
-		tar=${TAR_VERSION} && \
+		build-base="${BUILD_BASE_VERSION}" \
+		clang="${CLANG_VERSION}" \
+		llvm="${LLVM_VERSION}" \
+		ca-certificates="${CA_CERTIFICATES_VERSION}" \
+		openssl="${OPENSSL_VERSION}" \
+		tar="${TAR_VERSION}" && \
 # install pg_cron
-	wget -O pg_cron.tar.gz https://github.com/citusdata/pg_cron/archive/v${PG_CRON_VERSION}.tar.gz && \
+	wget -q -O pg_cron.tar.gz "https://github.com/citusdata/pg_cron/archive/v${PG_CRON_VERSION}.tar.gz" && \
 	tar -xzf pg_cron.tar.gz && \
 	cd pg_cron-* && \
 	sed -i.bak -e 's/-Werror//g' Makefile && \
@@ -30,7 +30,7 @@ RUN apk add --no-cache --virtual .build-deps \
 	make install && \
 	cd .. ; \
 # install pg_partman
-	wget -O pg_partman.tar.gz https://github.com/pgpartman/pg_partman/archive/v${PG_PARTMAN_VERSION}.tar.gz && \
+	wget -q -O pg_partman.tar.gz "https://github.com/pgpartman/pg_partman/archive/v${PG_PARTMAN_VERSION}.tar.gz" && \
 	tar -xzf pg_partman.tar.gz && \
 	cd pg_partman-* && \
 	make && \
