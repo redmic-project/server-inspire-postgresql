@@ -1,4 +1,3 @@
-# AIS Postgres
-Base de datos PostgreSQL para almacenar datos AIS.
+# Inspire PostgreSQL
 
-La tabla principal está particionada por tiempo, de esta forma sólo se accede agiliza las búsquedas que impliquen consultas por fechas.
+Base de datos PostgreSQL para almacenar datos de servicios OGC clasificados bajo temáticas de la directiva INSPIRE
