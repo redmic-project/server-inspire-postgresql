@@ -11,6 +11,8 @@ services:
         PG_CRON_VERSION:
         PG_PARTMAN_VERSION:
         BUILD_BASE_VERSION:
+        CLANG_VERSION:
+        LLVM_VERSION:
         CA_CERTIFICATES_VERSION:
         OPENSSL_VERSION:
         TAR_VERSION:
