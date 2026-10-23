@@ -1,5 +1,3 @@
-version: '3.5'
-
 services:
   postgresql:
     image: ${IMAGE_NAME:-registry.gitlab.com/redmic-project/server/inspire/postgresql}:${IMAGE_TAG:-latest}
