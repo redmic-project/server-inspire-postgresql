@@ -1,0 +1,8 @@
+volumes:
+  data-vol:
+    name: ${DATA_VOL_NAME}
+    driver: local
+    driver_opts:
+      type: ${VOL_TYPE:-nfs}
+      o: addr=${VOL_ADDR:-127.0.0.1},vers=${VOL_VERS:-4.2},${VOL_OPTS:-soft,nolock,noacl,noatime,nodiratime}
+      device: :${VOL_DEVICE_PREFIX}${DATA_VOL_DEVICE:-/inspire-postgres-vol/}

@@ -1,19 +1,19 @@
-ARG POSTGIS_IMAGE_TAG="11-3.2-alpine"
+ARG POSTGIS_IMAGE_TAG=17-3.6-alpine
 FROM postgis/postgis:${POSTGIS_IMAGE_TAG}
 
 LABEL maintainer="info@redmic.es"
 
-ARG PG_CRON_VERSION="1.4.1" \
-	PG_PARTMAN_VERSION="4.6.0" \
-	BUILD_BASE_VERSION="0.5-r2" \
-	CLANG_VERSION="12.0.1-r1" \
-	LLVM_VERSION="12.0.1-r0" \
-	CA_CERTIFICATES_VERSION="20211220-r0" \
-	OPENSSL_VERSION="1.1.1l-r8" \
-	TAR_VERSION="1.34-r0"
+ARG PG_CRON_VERSION \
+	PG_PARTMAN_VERSION \
+	BUILD_BASE_VERSION \
+	CLANG_VERSION \
+	LLVM_VERSION \
+	CA_CERTIFICATES_VERSION \
+	OPENSSL_VERSION \
+	TAR_VERSION
 
 # hadolint ignore=DL3003
-RUN apk add --no-cache --virtual .build-deps \
+RUN apk add --no-cache --no-check-certificate --virtual .build-deps \
 		build-base="${BUILD_BASE_VERSION}" \
 		clang="${CLANG_VERSION}" \
 		llvm="${LLVM_VERSION}" \
