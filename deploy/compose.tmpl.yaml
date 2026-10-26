@@ -1,8 +1,7 @@
 services:
   postgresql:
-    image: ${IMAGE_NAME:-registry.gitlab.com/redmic-project/server/inspire/postgresql}:${IMAGE_TAG:-latest}
+    image: ${IMAGE_NAME:-registry.gitlab.com/redmic-project/postgres/postgresql-postgis-pgcron-pgpartman}:${IMAGE_TAG:-latest}
     command: >
-      -c shared_preload_libraries=${SHARED_PRELOAD_LIBRARIES}
       -c checkpoint_timeout=${CHECKPOINT_TIMEOUT}
       -c cron.database_name=${POSTGRES_DB}
       -c work_mem=${WORK_MEM}
